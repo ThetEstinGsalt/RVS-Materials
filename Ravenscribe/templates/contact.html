@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+    {% block title %}
+        <title>Clean and Delightful -Contact</title>
+    {% endblock title %}
+
+
+    {% block css %}
+    <link rel="stylesheet" href="../static/css/contact.css">
+    
+
+
+    {% endblock css %}
+    {% block plaincss %}
+
+    {% endblock plaincss %}
+
+
+
+    {% block body %}
+      <div class="site-content">
+        <div class="box">
+            <header style="font-weight:700;">Contact</header>
+            <div class="text">
+                Clean and Delightful is an free and reader-friendly blogging site which is dedicated to
+                different topics
+            </div>
+            <br>
+            <br id="display">
+            <div class="text">
+                {{contact.text}}
+                
+            </div>
+            <form action="/contact" method="post">
+            {% csrf_token %}
+
+
+
+                <div class="item">
+                    <label for="name">Your name</label>
+                    <input class="finput"type="text" name="name" id="name">
+                </div>
+                <div class="item">
+                    <label for="email">Your Email</label>
+                    <input class="finput"type="email" name="email" id="email">
+
+                </div>
+                <div class="item">
+                    <label for="subject">Subject</label>
+
+                    <input class="finput"type="text" name="subject" id="subject">
+                </div>
+                <div class="item">
+                    <label for="messege">Your messege</label>
+                    <textarea name="messege" id="messege" cols="30" rows="6"></textarea>
+                </div>
+
+
+
+
+
+                <button type="submit">SEND</button>
+
+            </form>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    {% endblock body %}
+        {% block js %}
+    {% endblock js %}
+
+
+    
+
+  
+
+

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>About C.A.D</title>
+{% endblock title %}
+{% block css %}
+
+
+{% endblock css %}
+
+{% block plaincss %}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
+
+* {
+
+font-family: 'Cabin', Helvetica, Arial, sans-serif;
+margin: 0px;
+padding: 0px;
+border: 0px;
+box-sizing: border-box;
+
+
+
+
+
+}
+
+*::selection {
+color: white;
+background-color: black;
+}
+body{
+background: rgb(251 251 251);
+}
+
+.content {
+text-align: center;
+font-weight: 300;
+padding: 1em 11em;
+font-size:30px;
+line-height:1.7;
+
+}
+
+.title-about {
+
+margin: 1em;
+text-align: center;
+font-size: 4em;
+
+}
+
+
+
+.image {
+
+width: 100%;
+background: url('../static/icons/about\ image.jpg ') center center/cover;
+margin: auto;
+margin-bottom: 2em;
+height: 40em;
+max-width: 60em;
+
+}
+
+@media only screen and (max-width:1562px) {
+.content {
+padding: 1em 10vw;
+}
+
+.image {
+height: 64vw;
+}
+
+* {
+font-size: 19px;
+}
+
+
+}
+
+@media only screen and (max-width:500px) {
+
+.image {
+width: 93vw;
+}
+
+}
+@media only screen and (max-width:750px) {
+.content {
+padding: 1em 4vw;
+font-size: 5vw;
+
+}
+.title-about{
+font-size: 9vw;
+}
+.navlinks li{
+width: 11rem;
+}
+}
+.footer img{
+max-width: 148%;
+}
+{% endblock plaincss %}
+{% block body %}
+
+<div class="title-about">
+    About us
+
+</div>
+<div class="image">
+
+
+</div>
+<div class="content">
+    {{information.text |safe}}
+
+</div>
+
+
+{% endblock body %}
+{% block js %}
+{% endblock js %}

@@ -1,0 +1,1582 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{blog.title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="icon" href=" ../static/icons/logo2.png" type="image/gif" sizes="25x25">
+    <link rel="stylesheet" href="{% static 'css/moretopic.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
+
+        * {
+            outline: lightskyblue;
+
+        }
+
+        dl,
+        ol,
+        ul {
+            margin-bottom: 0rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: black;
+        }
+
+        hr {
+            display: none;
+            width: 100px;
+            height: 1em;
+
+        }
+
+
+        #jsnav {
+            transition: top 0.3s;
+            display: block;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            height: auto;
+
+        }
+
+
+        .space {
+            margin: 4rem auto 0 auto;
+            border-bottom: 1px solid #eee;
+            border-top: 1px solid #eee;
+            max-width: 1160px;
+            width: 100%;
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+
+            padding: 1.5rem 20px;
+            margin: 0 auto;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            max-width: 1160px;
+            width: 100%;
+
+
+            overflow: hidden;
+            /* padding: 20px 0; */
+
+        }
+
+        .site-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            flex-direction: column;
+        }
+
+
+        * {
+
+            font-family: 'Cabin', Helvetica, Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            box-sizing: border-box;
+            line-height: 1.5;
+
+
+        }
+
+        *::selection {
+            color: white;
+            background-color: black;
+        }
+
+        .blog-heading {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #000;
+            text-align: center;
+            margin: 1em 0em;
+            margin-top: 2em;
+            width: 100%;
+            max-width: 1160px;
+            font-family: 'Cabin', sans-serif;
+            padding: 0em 2em;
+
+
+
+        }
+
+        #thumbnail {
+
+            margin-bottom: 2em;
+            width: 1160px;
+            /* height: 677px; */
+            height: auto;
+        }
+
+        .concept {
+            width: 100%;
+            max-width: 1160px;
+            font-size: 23px;
+            padding: 1em 4em;
+            line-height: 2;
+            font-weight: 200;
+            margin-bottom: 2em;
+            text-align: center;
+            font-weight: 600;
+
+
+        }
+
+        .article-heading {
+            font-size: 2.5em;
+
+            font-weight: 700;
+            color: #000;
+            text-align: center;
+            margin: 2em 0em;
+
+            width: 100%;
+            max-width: 1160px;
+            font-family: 'Cabin', sans-serif;
+            padding: 0em 2em;
+            margin-top: 1em;
+            line-height: 1.6;
+        }
+
+        .article {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0em 1em;
+        }
+
+        .quotes {
+            font-family: 'ShopifySans', Helvetica, Arial, sans-serif;
+            color: lightskyblue;
+            margin-top: 1em;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 3px 4px 11px whitesmoke;
+            margin: 1em 0em;
+            line-height: 1.7;
+
+
+        }
+
+        .blog-content {
+            width: 100%;
+            max-width: 1160px;
+            font-size: 23px;
+            padding: 1em 4em;
+            line-height: 2;
+            font-weight: 200;
+            margin-bottom: 2em;
+            font-family: sans-serif;
+
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h5,
+        .h6 {
+            font-family: 'Cabin', sans-serif;
+            margin-top: .5em;
+            margin-bottom: .25em;
+            font-weight: 900;
+            line-height: 1.5em;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+            max-width: 100%;
+            height: auto;
+
+
+
+        }
+
+        .affiliate {
+
+            height: 18.5em;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 10em;
+
+
+
+        }
+
+
+        .classes {
+            margin: 0em 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .products-span {
+            display: block;
+            background: white;
+            margin-top: em;
+            height: 0em;
+            margin-top: 1.5em;
+
+
+        }
+
+
+
+
+
+
+        .products {
+            background-color: gray;
+            height: 100%;
+            width: 28em;
+            margin: 0px 2%;
+
+            transition: .3s all ease;
+
+        }
+
+        @media only screen and (max-width:1215px) {
+            #thumbnail {
+                margin-bottom: 2em;
+                max-width: 1160px;
+                height: auto;
+                width: 93%;
+
+            }
+
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .products {
+                height: 30vw;
+                width: 41vw;
+            }
+
+            .blog-heading {
+                font-size: 3em
+            }
+
+        }
+
+        @media only screen and (max-width:1078px) {
+            .blog-content {
+
+                padding: 1em 1.2em;
+
+            }
+
+            .article {
+
+                margin: 0em 1em;
+            }
+
+        }
+
+        @media only screen and (max-width:737px) {
+            .blog-content {
+                font-size: 20px;
+            }
+        }
+
+        @media only screen and (max-width:695px) {
+            .article-heading {
+                padding: 0em 1em;
+            }
+        }
+
+        #lastspace {
+            height: 4em;
+        }
+
+
+        @media only screen and (max-width:590px) {
+
+            .blog-content {
+                font-size: 18px;
+            }
+
+            .blog-heading {
+                font-size: 1.7em;
+                margin-top: 4em;
+                padding: 0em 1em;
+            }
+
+            .blog-content {
+
+                padding: 1em 0.3em;
+            }
+
+            .concept {
+                padding: 1em 1.5em;
+                font-size: 18px;
+            }
+
+            .article-heading {
+                font-size: 1.7em;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .h1,
+            .h2,
+            .h3,
+            .h5,
+            .h6 {
+                font-size: 1.3em;
+
+
+            }
+
+            #lastspace {
+                height: 2em;
+            }
+
+
+
+        }
+
+        @media only screen and (max-width:462px) {
+
+            .article-heading {
+                font-size: 1.3em;
+                padding: 0em 2em;
+            }
+
+            .affiliate {
+                height: 11.5em;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 5em;
+            }
+
+            .products {
+                width: 37vw;
+            }
+
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .h1,
+            .h2,
+            .h3,
+            .h5,
+            .h6 {
+                font-size: 1.1em;
+
+
+            }
+
+            .products {
+                width: 38vw;
+            }
+
+
+
+
+        }
+
+        @media only screen and (max-width:456px) {
+            .blog-content {
+                font-size: 14px;
+                line-height: 1.79;
+
+            }
+        }
+
+        @media only screen and (max-width:354px) {
+            .blog-content {
+                padding: 4em 0em;
+                font-size: 13.2px;
+
+            }
+
+            .article-heading {
+                font-size: 1.3em;
+                margin: 0em 0em;
+                padding: 2em 0em;
+
+
+            }
+
+            .blog-heading {
+                font-size: 1.45em;
+
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .h1,
+            .h2,
+            .h3,
+            .h5,
+            .h6 {
+                font-size: 1.1em;
+
+
+            }
+
+            .classes {
+                margin: 0em 1em;
+            }
+
+            .affiliate {
+                height: 17.5em;
+                height: 7.5em;
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 6em;
+            }
+
+            .site-content {
+                overflow-x: hidden;
+            }
+
+            .products {
+                width: 37vw;
+            }
+
+        }
+
+        @media only screen and (max-width:285px) {
+            .products-span {
+                transform: translateX(18px);
+
+            }
+        }
+
+
+
+
+        .products:hover {
+            opacity: .7;
+        }
+
+
+
+        #pagination-next {
+            right: 0;
+        }
+
+
+        #pagination-prev .pagination-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(-90deg) translate(-62.2%, 0%);
+            transform-origin: top left;
+            /* background: white; */
+            opacity: .7;
+            background: white;
+            color: black;
+
+            text-decoration: none;
+            left: -60px;
+            transition: .3s left;
+            transition: .35s all ease;
+
+
+
+
+
+        }
+
+        .anker {
+            color: lightskyblue;
+            text-decoration: underline;
+        }
+
+        .anker:hover {
+            color: blue;
+        }
+
+
+        #pagination-next .pagination-title {
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transform: rotate(90deg) translate(62.5%, 0);
+            transform-origin: top right;
+
+            opacity: .7;
+            background: white;
+            color: black;
+
+            text-decoration: none;
+            right: -60px;
+            transition: .3s right;
+            transition: .35s all ease;
+
+        }
+
+        .pagination-title {
+            height: 5px;
+            width: 37px;
+            background: aqua;
+            position: fixed;
+
+            height: auto;
+            width: 320px;
+            height: 80px;
+            font-size: 17px;
+            font-weight: 600;
+
+        }
+
+        .pagination-blog {
+
+            height: 320px;
+            position: fixed;
+            width: auto;
+
+            display: flex;
+            align-items: flex-end;
+            z-index: 1;
+
+            font-family: Cabin, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            top: 33%;
+            transition: .35s all ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+
+
+        }
+
+        .pagination-text {
+            visibility: hidden;
+            display: none;
+            color: white;
+            font-size: 17px;
+            text-shadow: 3px 2px 4px black;
+
+            width: 60%;
+            text-align: center;
+            font-weight: 900;
+
+
+        }
+
+        .pagintext {
+            font-weight: 900;
+            transition: .7s all ease;
+            cursor: pointer;
+
+        }
+
+        .pagintext:hover {
+            background-color: black;
+        }
+
+
+        .pagination-text button span {
+            width: 20em;
+            position: relative;
+            line-height: 2.3em;
+            top: -.5em;
+            transition: .2s all ease;
+        }
+
+        button {
+            outline: none;
+            cursor: pointer;
+        }
+
+
+        @media only screen and (max-width:1327px) {
+            .pagination-blog {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="jsnav" class="navigation-bar">
+        <div class="navcontainer">
+            <div class="nav-container">
+                <img id="ham" src="../static/icons/ham.png" alt="">
+                <div class="logo" onclick="window.location.href='/'">
+                    <img src=" ../static/icons/logo2.png" style=" height: 3.2em;" alt="">
+                </div>
+
+
+
+            </div>
+
+            <ul>
+
+
+
+                <li><a href="/">Home</a></li>
+                <li><a href="/search/2">Foods</a></li>
+                <li><a href="/search/1">Lifestyle</a></li>
+                <li><a href="/search/3">Guide</a></li>
+                <li><a href="/search/4">Facts</a></li>
+                <li><a href="/search/5">Fitness</a></li>
+
+
+            </ul>
+            <div class="search-image">
+                <img src="../static/icons/search.png" alt="">
+
+
+
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="searchbar">
+        <div class="input">
+            <div id="searchcross">
+                <img src="../static/icons/cross.png" alt="">
+
+            </div>
+            <form action="/search/keyword" method="get">
+                <input type="text" placeholder="Enter keyword" spellcheck="false" name="keyword">
+                <button type="submit"> Search </button>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <ul class="navlinks">
+
+        <div class="heading-text">
+            <a href="/" style="color: black; text-decoration: none;margin-left: 0.5em;">RavenScribe</a>
+
+
+            <img id="hamcross" src="../static/icons/cross.png" alt="" style="margin-top:6.5px;">
+        </div>
+
+        <a href="/">
+            <li>Home <div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+
+        <a href="/search/2">
+            <li>Foods<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/search/1">
+            <li>Lifestyle<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/search/3">
+            <li>Guide<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/search/4">
+            <li>Facts<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/search/5">
+            <li>Fitness<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/about">
+            <li>About<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <hr>
+        <a href="/about">
+            <li>Contact<div class="arrow"><img src="../static/icons/arrow.png" alt="" style="height: 16px;"></div>
+            </li>
+        </a>
+        <div class="social">
+            <div class="title" style="text-align: center;    margin-top: 2em;">
+                Follow
+            </div>
+            <div class="logos">
+                <img src="../static/icons/facebook.png" alt="">
+                <img src="../static/icons/instragram.png" alt="">
+                <img src="../static/icons/gmail.png" alt="" onclick="window.open('/email')">
+
+            </div>
+
+        </div>
+
+
+
+    </ul>
+
+
+    <div id="pagination-prev" class="pagination-blog" onclick="window.location.href='/blog/{{prev}}'"
+        style="background: url('{{prev1}}') center center/cover;">
+        <a href="/blog/{{prev}}" class="pagination-title">
+
+
+            Previous blog
+        </a>
+
+
+
+
+        <div class="pagination-text">
+
+            <span class="pagintext">
+
+                {{prev0}}
+
+
+            </span>
+
+
+            <br>
+            <button
+                style="margin-top: 1em; padding: .4em 1em; width: 7em; height: 2em; overflow: hidden;   transition: .2s all ease;   outline: lightskyblue; border-color:lightskyblue ;">
+                <span style="font-weight: 600;"> View
+                    blog</span>
+                <span><img src="../static/icons/arrow.png" style="height: 1em; transform:rotate(180deg);  "
+                        alt=""></span></button>
+
+
+        </div>
+
+
+
+    </div>
+
+    <div id="pagination-next" class="pagination-blog" onclick="window.location.href='/blog/{{next}}'"
+        style="background: url('{{next1}}') center center/cover;">
+        <a href="/blog/{{next}}" class="pagination-title">
+
+            Next blog
+
+
+        </a>
+        <div class="pagination-text">
+            <span class="pagintext">
+                {{next0}}
+
+            </span>
+            <br>
+            <button
+                style="margin-top: 1em; padding: .4em 1em; width: 7em; height: 2em; overflow: hidden;  transition: .2s all ease; outline: lightskyblue; border-color:lightskyblue ;">
+                <span style="font-weight: 600;"> View
+                    blog</span>
+                <span><img src="../static/icons/arrow.png" style="height: 1em; " alt=""></span></button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- ----------------------------------------------------- -->
+    <div class="site-content">
+        <div class="blog-heading">
+            {{blog.title}}
+
+
+        </div>
+
+        <img src="{{blog.thumbnail}}" alt="" id="thumbnail">
+        <div class=" space">
+            advertisement
+        </div>
+        <div class="concept">
+
+            {{blog.concept|safe}}
+
+
+        </div>
+        <div class=" space">
+            advertisement
+        </div>
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title}}
+            </div>
+            <img src="{{blog.image}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content|safe}}
+
+            </div>
+
+
+
+
+        </div>
+
+
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title1}}
+            </div>
+            <img src="{{blog.image1}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content1|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title2}}
+            </div>
+            <img src="{{blog.image2}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content2|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title3}}
+            </div>
+            <img src="{{blog.image3}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content3|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title4}}
+            </div>
+            <img src="{{blog.image4}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content4|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title5}}
+            </div>
+            <img src="{{blog.image5}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content5|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title6}}
+            </div>
+            <img src="{{blog.image6}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content6|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title7}}
+            </div>
+            <img src="{{blog.image7}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content7|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title8}}
+            </div>
+            <img src="{{blog.image8}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content8|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title9}}
+            </div>
+            <img src="{{blog.image9}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content9|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title10}}
+            </div>
+            <img src="{{blog.image10}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content10|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title11}}
+            </div>
+            <img src="{{blog.image11}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content11|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title12}}
+            </div>
+            <img src="{{blog.image12}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content12|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title13}}
+            </div>
+            <img src="{{blog.image13}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content13|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title14}}
+            </div>
+            <img src="{{blog.image14}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+                {{blog.article_content14|safe}}
+
+            </div>
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+        <div class="article">
+            <div class="article-heading">
+                {{blog.article_title15}}
+            </div>
+            <img src="{{blog.image15}}" alt="" height="700px" width="1000px">
+
+            <div class="blog-content">
+
+                {{blog.article_content15|safe}}
+
+            </div>
+
+
+
+        </div>
+
+        <div class="space">
+            advertisement
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="article-heading">
+            If you like this topic, you may also like
+        </div>
+        <div class="affiliate">
+            <div class="classes" onclick="window.open('{{affiliate.link}}')">
+                <div class="products" style="background: url('{{affiliate.image}}') center center/cover;">
+
+                </div>
+                <span class="products-span"><a href="{{affiliate.link}}" style="color: black; ">{{affiliate.name}}</a>
+                </span>
+
+            </div>
+            <div class="classes" onclick="window.open('{{affiliate.link2}}')">
+                <div class="products" style="background: url('{{affiliate.image2}}') center center/cover;">
+
+                </div>
+                <span class="products-span"><a href="{{affiliate.link2}}" style="color: black;">{{affiliate.name2}}</a>
+                </span>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="space">
+            advertisement
+        </div>
+
+        <div class="article-heading" style="color: rgb(53, 53, 53)">
+            IF YOU LIKED OUR BLOG , ALSO CHECK THESE OUT
+
+        </div>
+
+
+
+        <!-- //////////////////////////////////////////////////////// -->
+
+
+
+
+
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators" style="bottom: 175px;">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="items">
+
+                    {%for recomend in recomendation|slice:"0:3"%}
+                    <div class="on">
+                        <a href="/blog/{{recomend.auto_increment_id}}">
+                            <div class="moreon" style=" background: url('{{recomend.thumbnail}}') center center/cover;">
+                                <div class="text">
+                                    View post &rarr;
+                                </div>
+
+                            </div>
+                            <div class="text">
+                                {{recomend.title}}
+                            </div>
+                        </a>
+
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <div class="carousel-item">
+                <div class="items">
+                    {%for recomend in recomendation|slice:"3:6"%}
+                    <div class="on">
+                        <a href="/blog/{{recomend.auto_increment_id}}">
+                            <div class="moreon" style=" background: url('{{recomend.thumbnail}}') center center/cover;">
+                                <div class="text">
+                                    View post &rarr;
+                                </div>
+
+                            </div>
+                            <div class="text">
+                                {{recomend.title}}
+                            </div>
+                        </a>
+
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <div class="carousel-item">
+                <div class="items">
+                    {%for recomend in recomendation|slice:"6:9"%}
+                    <div class="on">
+                        <a href="/blog/{{recomend.auto_increment_id}}">
+                            <div class="moreon" style=" background: url('{{recomend.thumbnail}}') center center/cover;">
+                                <div class="text">
+                                    View post &rarr;
+                                </div>
+
+                            </div>
+                            <div class="text">
+                                {{recomend.title}}
+                            </div>
+                        </a>
+
+                    </div>
+                    {% endfor %}
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="wrapper">
+        {%for recomend in recomendation%}
+        <div class="litem" onclick="window.location.href='/blog/{{recomend.auto_increment_id}}'">
+            <div class="item" style="background: url('{{recomend.thumbnail}}') no-repeat center center/cover;"></div>
+            <div class="text" style="font-size: 20px;">
+                {{recomend.title}}
+
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+    <div id="lastspace" style="width: 100%; "></div>
+    {% include "footer.html" %}
+
+
+
+
+    <!-- ////////////////////////////// -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        let community = document.getElementById("community-join")
+        if (localStorage.getItem("signed") == "yes") {
+            if (community !== null) {
+                community.style.display = 'none'
+            }
+
+
+        }
+        var a = document.querySelectorAll('.article')
+        var add = document.querySelectorAll('.space')
+
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].innerText == "") {
+                a[i].style.display = "none"
+                add[i + 1].style.display = "none"
+            }
+        }
+
+
+        $('document').ready(function () {
+            let a = document.getElementById('ham');
+            a.addEventListener('click', rotate)
+
+
+            function rotate() {
+
+
+                a.style.transform = 'rotate(-90deg)';
+
+                setTimeout(() => {
+                    a.style.transform = 'rotate(0deg)';
+
+                }, 500);
+
+            }
+
+            $('#searchcross').click(function () {
+                // $('.searchbar').css({ 'z-index': '10', 'visibility': 'visible' })
+                $('.searchbar').css({
+                    'z-index': '-50', 'visibility': 'hidden', 'opacity': '0', 'display': 'none'
+                })
+
+                // $('.searchbar').hide()
+
+            })
+            $('.search-image').click(function () {
+                $('.searchbar').css({ 'z-index': '1000', 'visibility': 'visible', 'opacity': '.99', 'display': 'flex' })
+                // $('.searchbar').show()
+
+            })
+
+            $('.navlinks a li').on('mouseover', function () {
+
+
+                $(this).children('.navlinks a li div ').css({
+
+                    'visibility': 'visible',
+                    'opacity': '1',
+                    'transform': 'translateX(60px)',
+                })
+
+            }).on('mouseleave', function () {
+                $(this).children('.navlinks a li div ').css({
+
+                    'transform': 'translateX(40px)',
+                    'opacity': '0',
+                    'visibility': 'hidden'
+                })
+            })
+
+            const navslide = () => {
+                const burger = document.querySelector('#ham')
+                const nav = document.querySelector('.navlinks')
+                const ham = document.querySelector('#hamcross')
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('active')
+                })
+                ham.addEventListener('click', function () {
+                    nav.classList.toggle('active')
+                })
+            }
+            navslide()
+
+
+
+        })
+        // let button = document.querySelector('.input button')
+        // button.addEventListener('click', function () {
+        //     let searched = document.querySelector('input')
+        //     searched.value = '';
+
+        // })
+
+
+
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            let prev = document.querySelector('#pagination-prev .pagination-title')
+            let next = document.querySelector('#pagination-next .pagination-title')
+            let site = document.querySelector('.site-content')
+            // prev.style.left = "0px"
+            // next.style.right = "0px"
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+                prev.style.left = "0px"
+                next.style.right = "0px"
+
+
+            } else {
+                prev.style.left = "-80px"
+                next.style.right = "-80px"
+
+
+            }
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("jsnav").style.top = "0px";
+            } else {
+                document.getElementById("jsnav").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+
+
+        $('.items .moreon').on('mouseover', function () {
+            $(this).children('.items .moreon .text').css({ 'visibility': 'visible', 'transform': 'translateY(50px)', 'opacity': '1' })
+
+
+
+
+        }).on('mouseleave', function () {
+            $('.items .moreon .text').css({ 'transform': 'translateY(100px)', 'opacity': '0', 'visibility': 'hidden' })
+
+
+
+        })
+        let scroll1 = document.querySelector('.wrapper')
+        scroll1.scrollTo(460, 0)
+
+
+        let back = document.getElementsByClassName('pagination-blog')
+        const bg1 = back[0].style.background
+        back[0].style.setProperty('background', "transparent")
+        const bg2 = back[1].style.background
+        back[1].style.setProperty('background', 'transparent')
+
+        let paginations = document.querySelectorAll('.pagination-blog')[0]
+        let paginations2 = document.querySelectorAll('.pagination-blog')[1]
+        paginations.onmouseover = function () {
+            this.style.width = "40em";
+
+            this.style.background = bg1;
+
+        }
+        paginations2.onmouseover = function () {
+            this.style.width = "40em";
+
+            this.style.background = bg2;
+
+
+
+        }
+        paginations.onmouseleave = function () {
+            this.style.setProperty('background', "transparent")
+            this.style.width = 'auto'
+            this.style.setProperty('background', "transparent")
+
+        }
+        paginations2.onmouseleave = function () {
+            this.style.setProperty('background', "transparent")
+            this.style.width = 'auto'
+
+
+
+        }
+
+        $('.pagination-blog').on('mouseover', function () {
+
+            $(this).children('.pagination-title').css({
+                'background-color': 'black',
+                'opacity': '.4',
+                'color': 'white'
+            })
+
+            $(this).children('.pagination-text').css({
+                'display': 'block',
+                'visibility': 'visible'
+            })
+        }).on('mouseleave', function () {
+
+            $(this).children('.pagination-title').css({
+                'background-color': 'white',
+                'opacity': '1',
+                'color': 'black'
+            })
+
+            $(this).children('.pagination-text').css({
+                'display': 'none',
+                'visibility': 'hidden'
+            })
+
+        })
+
+        $('.pagination-text button').on('mouseover', function () {
+            $(this).children('.pagination-text button span').css({
+                'top': '-2.89em'
+            })
+
+        }).on('mouseleave', function () {
+            $(this).children('.pagination-text button span').css({
+                'top': '-.5em'
+            })
+
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
